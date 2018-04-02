@@ -2,21 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home</title>
-    <link>https://mohammedalsayed.github.io/</link>
+    <link>https://www.mmsayed.com/</link>
     <description>Recent content on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Mar 2018 21:30:55 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 01 Apr 2018 13:48:46 +0300</lastBuildDate>
     
-	<atom:link href="https://mohammedalsayed.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.mmsayed.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>كيف تنشئ مدونتك الخاصة</title>
+      <link>https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D9%86%D8%B4%D8%A6-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9/</link>
+      <pubDate>Sun, 01 Apr 2018 13:48:46 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D9%86%D8%B4%D8%A6-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9/</guid>
+      <description>مقدمة في هذه المشاركة سوف أشرح طريقة إنشاء مدونة خاصة عن طريق التقنيات التالية :
+ github وسوف نستخدمه لتشغيل الموقع الخاص فيك على الانترنت hugo وسوف نستخدمه لانشاء المدونة  ثم سنتطرق إلى إنشاء دومين خاص بالموقع (yourname.com) عن طريق موقع godaddy
+المتطلبات:
+ حساب في github تنزيل hugo على الجهاز ويمكن معرفة ذلك عن طريق موقعهم بطاقة فيزا لشراء اسم النطاق عن طريق موقع godaddy  لماذا hugo ?</description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>https://mohammedalsayed.github.io/about/</link>
+      <link>https://www.mmsayed.com/about/</link>
       <pubDate>Sat, 31 Mar 2018 21:30:55 +0300</pubDate>
       
-      <guid>https://mohammedalsayed.github.io/about/</guid>
+      <guid>https://www.mmsayed.com/about/</guid>
       <description>Mohammed Alsayed earned his bacholres degree in software engineering from King Fahd University of Petroleum and Minerals. He is now working at WireFilter in Riyadh.
 Some of Mohammed&amp;rsquo;s Specialites:
  Machine Learning Web Development Distributed Systems (Kafka)  Programming Languages Mohammed Master&amp;rsquo;s:
@@ -25,10 +37,10 @@ Some of Mohammed&amp;rsquo;s Specialites:
     
     <item>
       <title>My First Post</title>
-      <link>https://mohammedalsayed.github.io/posts/2018/3/my-first-post/</link>
+      <link>https://www.mmsayed.com/posts/2018/3/my-first-post/</link>
       <pubDate>Sat, 31 Mar 2018 21:30:55 +0300</pubDate>
       
-      <guid>https://mohammedalsayed.github.io/posts/2018/3/my-first-post/</guid>
+      <guid>https://www.mmsayed.com/posts/2018/3/my-first-post/</guid>
       <description>Hello World This is my first blog site that I made in my ever life. The technologies used are hugo for static site generating and github for hosting. Mr. Rayed my manager in the company inspired me with this great idea. Many thanks to Mr. Rayed. Maybe my next blog will be on how I made this blog but in arabic. I also have some other topics that I would like to include in the few next days.</description>
     </item>
     
