@@ -91,7 +91,7 @@
 	</div>
 </div>
 
-        <div class="content container">
+        <div dir="rtl" class="content container">
             <div class="post">
   <h1>كيف تنشئ مدونتك الخاصة</h1>
   
@@ -145,15 +145,134 @@
 
 <pre><code>mkdir &lt;website-name&gt;
 cd &lt;website-name&gt;
-git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde
+git clone https://github.com/htr3n/hyde-hyde.git myblog
 </code></pre>
 
-<p>سوف يقوم بتحميل المدونة بالخلفية المختارة في المجلد باسم website-name</p>
+<p>سوف يقوم بتحميل المدونة بالخلفية المختارة في المجلد باسم myblog</p>
 
-<p>لتشغيل السيرفر
-<code>hugo server</code></p>
+<pre><code>cd myblog/
+mv exampleSite/content/ .
+mv exampleSite/config.toml .
+vi config.toml
+</code></pre>
+
+<p>أضف # لالغاء فعاليته</p>
+
+<pre><code>theme = &quot;hyde-hyde&quot;
+#theme = &quot;hyde-hyde&quot;
+</code></pre>
+
+<p>ثم اضغط esc واكتب :qw ثم انتر لحفظ الملف</p>
+
+<p>لتشغيل السيرفر</p>
+
+<p><code>hugo server</code></p>
 
 <p>وتصفح <a href="http://localhost:1313">http://localhost:1313</a></p>
+
+<p>مدونتك جاهزة الآن كما تشاهد في المتصفح !</p>
+
+<p>لإضافة مشاركات</p>
+
+<pre><code>hugo new my-first-post.md
+</code></pre>
+
+<p>وسوف ينشئ لك ملف للتعديل عليه في content-&gt;posts</p>
+
+<h2 id="ثانيا-تشغيل-الموقع-الخاص-بك-على-github">ثانيا: تشغيل الموقع الخاص بك على Github</h2>
+
+<p>في حساب github سيكون لك مستودعين مختلفين</p>
+
+<ul>
+<li>الأول: لملفات myblog</li>
+<li>والثاني: لمجلد public الذي سوف نرفعه ع خادم github</li>
+</ul>
+
+<p>1- أنشئ مستودع باسم myblog في github</p>
+
+<p>2- أنشئ لك repository باسم حسابك٬ مضافا اليه github.io٫ هذا المستودع سوف يرفع فيه مجلد public</p>
+
+<p>مثال:
+<a href="https://github.com/MohammedAlsayed">https://github.com/MohammedAlsayed</a></p>
+
+<p>اسم الحساب: MohammedAlsayed</p>
+
+<p>المستودع: MohammedAlsayed.github.io</p>
+
+<p>تأكد من أنك في مجلد myblog</p>
+
+<pre><code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
+vi deploy.sh
+</code></pre>
+
+<p>انسخ</p>
+
+<pre><code>#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+</code></pre>
+
+<p>ثم اضغط esc واكتب :qw ثم انتر لحفظ الملف</p>
+
+<p><code>chmod +x deploy.sh</code></p>
+
+<p>السكربت هذا سوف يقوم باصدار مجلد اسمه public ورفعه للمستودع ٢</p>
+
+<pre><code>./deploy.sh &quot;Your optional commit message&quot;
+</code></pre>
+
+<p>ثم اذهب الى
+<code>https://&lt;USERNAME&gt;.github.io</code></p>
+
+<h2 id="ثالثا-ربط-حسابك-بدومين-خاص-باسمك">ثالثا: ربط حسابك بدومين خاص باسمك</h2>
+
+<p>١-
+اذهب الى موقع <a href="https://www.godaddy.com">godaddy</a> أبحث عن دومين مناسب وادفع</p>
+
+<p>٢-
+بعد اختيار الاسم اذهب الى github
+ثم إلى خيارات مستودع
+USERNAME.github.io</p>
+
+<p>USERNAME.github.io -&gt; Settings -&gt; GitHub Pages -&gt; Custom domain</p>
+
+<p>ضع رابط موقعك ثم احفظ</p>
+
+<p>٣- اذهب الى موقع godaddy</p>
+
+<p>اختر DNS</p>
+
+<p><img src="/img/2018/4/1.png" alt="DNS" /></p>
+
+<p>ثم اضف كما في الصورتين التالية</p>
+
+<p><img src="/img/2018/4/2.png" alt="setting1" /></p>
+
+<p><img src="/img/2018/4/3.png" alt="setting2" /></p>
+
+<p>وتهانينا الآن ادخل على موقعك
+www.mmsayed.com</p>
 
 </div>
             <div class="footer">
