@@ -17,10 +17,9 @@
       <pubDate>Tue, 03 Apr 2018 07:31:53 +0300</pubDate>
       
       <guid>https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/</guid>
-      <description>سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة.
+      <description>مقدمة في هذه المشاركة سأشرح طريقة التعديل في إعدادات hugo حتى تدعم صفحاتها من اليمين لليسار كما تحتاج اللغة العربية والأردو والهيبرو وغيرها من اللغات حتى تعرض في المتصفح بشكل سليم٬ سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة. ولكن بسبب طريقة تثبيتي ل hugo بشكل مختلف٬ لمشاهدة طريقتي ولذلك ستكون تعديلاتي على الملفات الأصلية
 أولا: افتح: myblog/archetypes/default.md
---- title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true ---  سنقوم بتغييره وذلك بإضافة rtl: true
---- title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true + rtl: true ---  ثانيا للتغيير اتجاه الصفحة من اليمين لليسار عند وضع rtl: true وبقائها من اليسار لليمين عند وضع rtl: false</description>
+--- title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .</description>
     </item>
     
     <item>

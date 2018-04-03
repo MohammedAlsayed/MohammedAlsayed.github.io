@@ -98,10 +98,9 @@
         <div class="post">
         <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/">كيف تجعل مدونتك تدعم right-to-left html</a></h1>
         <span class="post-date">Apr 3, 2018</span>
-        سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة.
+        مقدمة في هذه المشاركة سأشرح طريقة التعديل في إعدادات hugo حتى تدعم صفحاتها من اليمين لليسار كما تحتاج اللغة العربية والأردو والهيبرو وغيرها من اللغات حتى تعرض في المتصفح بشكل سليم٬ سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة. ولكن بسبب طريقة تثبيتي ل hugo بشكل مختلف٬ لمشاهدة طريقتي ولذلك ستكون تعديلاتي على الملفات الأصلية
 أولا: افتح: myblog/archetypes/default.md
---- title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot; date: {{ .Date }} draft: true ---  سنقوم بتغييره وذلك بإضافة rtl: true
---- title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot; date: {{ .Date }} draft: true + rtl: true ---  ثانيا للتغيير اتجاه الصفحة من اليمين لليسار عند وضع rtl: true وبقائها من اليسار لليمين عند وضع rtl: false
+--- title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot; date: {{ .
         
         <div class="read-more-link">
             <a href="/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/">Read More…</a>
