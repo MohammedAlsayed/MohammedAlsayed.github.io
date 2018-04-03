@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Apr 2018 13:48:46 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 03 Apr 2018 07:31:53 +0300</lastBuildDate>
     
 	<atom:link href="https://www.mmsayed.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>كيف تجعل مدونتك تدعم right-to-left html</title>
+      <link>https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/</link>
+      <pubDate>Tue, 03 Apr 2018 07:31:53 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/</guid>
+      <description>سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة.
+أولا: افتح: myblog/archetypes/default.md
+--- title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true ---  سنقوم بتغييره وذلك بإضافة rtl: true
+--- title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true + rtl: true ---  ثانيا للتغيير اتجاه الصفحة من اليمين لليسار عند وضع rtl: true وبقائها من اليسار لليمين عند وضع rtl: false</description>
+    </item>
     
     <item>
       <title>كيف تنشئ مدونتك الخاصة</title>

@@ -96,6 +96,19 @@
             <div class="posts">
   
         <div class="post">
+        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/">كيف تجعل مدونتك تدعم right-to-left html</a></h1>
+        <span class="post-date">Apr 3, 2018</span>
+        سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة.
+أولا: افتح: myblog/archetypes/default.md
+--- title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot; date: {{ .Date }} draft: true ---  سنقوم بتغييره وذلك بإضافة rtl: true
+--- title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot; date: {{ .Date }} draft: true + rtl: true ---  ثانيا للتغيير اتجاه الصفحة من اليمين لليسار عند وضع rtl: true وبقائها من اليسار لليمين عند وضع rtl: false
+        
+        <div class="read-more-link">
+            <a href="/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D8%AC%D8%B9%D9%84-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%AA%D8%AF%D8%B9%D9%85-rtl/">Read More…</a>
+        </div>
+        
+        </div>
+        <div class="post">
         <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/4/%D9%83%D9%8A%D9%81-%D8%AA%D9%86%D8%B4%D8%A6-%D9%85%D8%AF%D9%88%D9%86%D8%AA%D9%83-%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9/">كيف تنشئ مدونتك الخاصة</a></h1>
         <span class="post-date">Apr 1, 2018</span>
         مقدمة في هذه المشاركة سوف أشرح طريقة إنشاء مدونة خاصة عن طريق التقنيات التالية :

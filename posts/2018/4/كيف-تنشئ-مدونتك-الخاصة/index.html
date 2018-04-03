@@ -91,23 +91,24 @@
 	</div>
 </div>
 
-        <div dir="rtl" class="content container">
-            <div class="post">
-  <h1>كيف تنشئ مدونتك الخاصة</h1>
-  
-  <div class="col-sm-12 col-md-12">
-    <span class="text-left post-date meta">
+        <div class="content container">
             
-       
-        <i class="fas fa-calendar-alt"></i> Apr 1, 2018
-      
-      
-      
-      
-      </span>  
-  </div>    
-  
-  
+  <div dir="rtl" class="post">
+    <h1>كيف تنشئ مدونتك الخاصة</h1>
+    
+    <div class="col-sm-12 col-md-12">
+      <span class="text-left post-date meta">
+              
+         
+          <i class="fas fa-calendar-alt"></i> Apr 1, 2018
+        
+        
+        
+        
+        </span>  
+    </div>    
+    
+    
 
 <h2 id="مقدمة">مقدمة</h2>
 
@@ -134,7 +135,7 @@
 <p>في الحقيقة هذه أول مدونة أنشأتها لنفسي٬ ولذلك خبرتي ضعيفة في التقنيات الأخرى مثل وورد بريس٬
 لكن مما لا يخفى علي أن وورد بريس يعمل بتقنية البي أتش بي مما يحتاج الى سيرفر٬ وكذلك يحتاج الى سيرفر لتخزين البيانات مثل mysql
 فهذه التقنيات تزيد من تعقيد عملية انشاء مدونة من اجل الكتابة فقط.
-لكن hugo عبارة عن صفحات html فقط من غير خادم ولا قاعدة بيانات مزين ب css</p>
+لكن hugo عبارة عن صفحات html فقط من غير خادم ولا قاعدة بيانات٬ مزين ب css فقط !</p>
 
 <p>فما أسهله !</p>
 
@@ -191,7 +192,7 @@ vi config.toml
 
 <p>1- أنشئ مستودع باسم myblog في github</p>
 
-<p>2- أنشئ لك repository باسم حسابك٬ مضافا اليه github.io٫ هذا المستودع سوف يرفع فيه مجلد public</p>
+<p>2- أنشئ لك مستودع باسم حسابك٬ مضافا اليه github.io٫ هذا المستودع سوف يرفع فيه مجلد public</p>
 
 <p>مثال:
 <a href="https://github.com/MohammedAlsayed">https://github.com/MohammedAlsayed</a></p>
@@ -206,7 +207,7 @@ vi config.toml
 vi deploy.sh
 </code></pre>
 
-<p>انسخ</p>
+<p>سننسخ التالي في ملف جديد باسم deploy.sh</p>
 
 <pre><code>#!/bin/bash
 
@@ -238,13 +239,15 @@ cd ..
 
 <p><code>chmod +x deploy.sh</code></p>
 
-<p>السكربت هذا سوف يقوم باصدار مجلد اسمه public ورفعه للمستودع ٢</p>
+<p>السكربت هذا سوف يقوم باصدار مجلد اسمه public ورفعه للمستودع الثاني (MohammedAlsayed.github.io)</p>
 
 <pre><code>./deploy.sh &quot;Your optional commit message&quot;
 </code></pre>
 
 <p>ثم اذهب الى
 <code>https://&lt;USERNAME&gt;.github.io</code></p>
+
+<p>وتهانينا موقعك الآن على الانترنت !</p>
 
 <h2 id="ثالثا-ربط-حسابك-بدومين-خاص-باسمك">ثالثا: ربط حسابك بدومين خاص باسمك</h2>
 
@@ -272,10 +275,13 @@ USERNAME.github.io</p>
 
 <p><img src="/img/2018/4/3.png" alt="setting2" /></p>
 
-<p>وتهانينا الآن ادخل على موقعك
-www.mmsayed.com</p>
+<p>وتهانينا الآن ادخل على موقعك</p>
 
-</div>
+<p>www.mmsayed.com</p>
+
+  </div>
+
+
             <div class="footer">
                 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 

@@ -10,8 +10,8 @@
     	
     <meta name="generator" content="Hugo 0.37.1" />
     
-    <title>My First Post &middot; Home</title>
-    <meta content="My First Post - Home" property="og:title">
+    <title>كيف تجعل مدونتك تدعم right-to-left html &middot; Home</title>
+    <meta content="كيف تجعل مدونتك تدعم right-to-left html - Home" property="og:title">
     <meta content=" - " property="og:description">    
     <!-- CSS --> 
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -93,14 +93,14 @@
 
         <div class="content container">
             
-<div class="post">
-    <h1>My First Post</h1>
+  <div dir="rtl" class="post">
+    <h1>كيف تجعل مدونتك تدعم right-to-left html</h1>
     
     <div class="col-sm-12 col-md-12">
       <span class="text-left post-date meta">
               
          
-          <i class="fas fa-calendar-alt"></i> Mar 31, 2018
+          <i class="fas fa-calendar-alt"></i> Apr 3, 2018
         
         
         
@@ -110,12 +110,92 @@
     
     
 
-<h1 id="hello-world">Hello World</h1>
+<p>سأقوم بتعديلات في الملفات الأصلية وذلك غير محبذ بشكل عام في عالم البرمجة.</p>
 
-<p>This is my first blog site that I made in my ever life. The technologies used are <a href="https://themes.gohugo.io">hugo</a> for static site generating and <a href="https://github.com">github</a> for hosting. <a href="https://rayed.com">Mr. Rayed</a> my manager in the company inspired me with this great idea. Many thanks to <a href="https://rayed.com">Mr. Rayed</a>.
-Maybe my next blog will be on how I made this blog but in arabic. I also have some other topics that I would like to include in the few next days.</p>
+<h2 id="أولا">أولا:</h2>
 
-<p>Cheers!</p>
+<p>افتح:
+myblog/archetypes/default.md</p>
+
+<pre><code>---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ .Date }}
+draft: true
+---
+</code></pre>
+
+<p>سنقوم بتغييره وذلك بإضافة <code>rtl: true</code></p>
+
+<pre><code>---
+title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;
+date: {{ .Date }}
+draft: true
++ rtl: true
+---
+</code></pre>
+
+<h1 id="ثانيا">ثانيا</h1>
+
+<p>للتغيير اتجاه الصفحة من اليمين لليسار عند وضع <code>rtl: true</code>
+وبقائها من اليسار لليمين عند وضع <code>rtl: false</code></p>
+
+<p>افتح
+myblog/layouts/partials/post_content.html</p>
+
+<p>قم بإضافة:</p>
+
+<pre><code>+ {{if .Params.rtl}}
++    &lt;div dir=&quot;rtl&quot; class=&quot;post&quot;&gt;
+-    &lt;div class=&quot;post&quot;&gt;
+        &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+        {{ if ne .Params.showpagemeta false }}
+...
+...
+...
+  
+        {{ end }}
+        {{ .Content }}
+    &lt;/div&gt;
++ {{else}}
+// copy and paste the hole &lt;div class=&quot;post&quot;&gt; block 
+// NOTE: this div does not have rtl attribute
+  &lt;div class=&quot;post&quot;&gt;
+    &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
+    {{ if ne .Params.showpagemeta false }}
+    &lt;div class=&quot;col-sm-12 col-md-12&quot;&gt;
+        &lt;span class=&quot;text-left post-date meta&quot;&gt;
+
+...
+...
+...
+
+    {{ end }}
+    {{ .Content }}
+ &lt;/div&gt;
+
++{{ end }}
+</code></pre>
+
+<h1 id="ثالثا">ثالثا</h1>
+
+<p>سنقوم بتعديل ال code block css حتى يكون من اليسار لليمين دائمًا٬</p>
+
+<p>سنقوم بإضافة</p>
+
+<pre><code>+    direction: ltr;
+</code></pre>
+
+<p>في الملف التالي:
+myblog/static/css/custom.css</p>
+
+<pre><code> .hljs {
++    direction: ltr;
+     white-space: pre;
+     overflow-x: auto; /* no line wrapping */
+ }
+</code></pre>
+
+<p>والآن مدونتك جاهزة للكتابة بالعربي !</p>
 
   </div>
 
