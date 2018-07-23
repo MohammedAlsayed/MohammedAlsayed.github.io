@@ -96,15 +96,43 @@
             <div class="posts">
   
         <div class="post">
-        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5/">إنشاء سيرفر محادثات خاص</a></h1>
+        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/7/kafka-useful-cmds/">Kafka Useful Cmds</a></h1>
+        <span class="post-date">Jul 23, 2018</span>
+        Start Kafka confluent start  OR
+zookeeper-server-start ~/Downloads/confluent-4.0.0/etc/kafka/zookeeper.properties&amp; kafka-server-start ~/Downloads/confluent-4.0.0/etc/kafka/server.properties&amp;  If using Avro:
+schema-registry-start ~/Downloads/confluent-4.0.0/etc/schema-registry/schema-registry.properties&amp;  Topics kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test kafka-topics --delete --zookeeper localhost:2181 --topic test kafka-topics --list --zookeeper localhost:2181  to describe info of a topic (leader, #partitions, #replications etc)
+kafka-topics --describe --zookeeper localhost:2181 --topic test  Console kafka-console-producer --broker-list localhost:9092 --topic test kafka-console-consumer --bootstrap-server localhost:9092 --topic test  If serialization needed for consumer use:
+        
+        <div class="read-more-link">
+            <a href="/posts/2018/7/kafka-useful-cmds/">Read More…</a>
+        </div>
+        
+        </div>
+        <div class="post">
+        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/7/usefull-linux-cmds/">Usefull Linux Cmds</a></h1>
+        <span class="post-date">Jul 23, 2018</span>
+        Introduction The following commands I found useful while working. This blog will be updated continuosly.
+sshfs This commands syncs a folder in a server with your local directory
+sshfs username@server-ip:/folder/path/in/the/server /local/path e.g: sshfs root@libvirt:/root/go/src/wirefilter.com/ .  If you finished, you can unmount the folder.
+umount -f wirefilter.com  ssh-copy-id Instead of doing the long ssh copy procedure this command does it for you.
+ssh-copy-id username@server-ip ssh-copy-id msayed@192.168.100.20  ssh hostname Instead of remembring the username and ip address of every server, you can assign it an alias and ssh it with that alias.
+        
+        <div class="read-more-link">
+            <a href="/posts/2018/7/usefull-linux-cmds/">Read More…</a>
+        </div>
+        
+        </div>
+        <div class="post">
+        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5-%D8%A8%D8%A7%D9%84%D8%A8%D9%8A%D8%AA/">إنشاء سيرفر محادثات خاص بالبيت</a></h1>
         <span class="post-date">Apr 5, 2018</span>
-        مقدمة في هذه المشاركة سوف أشرح طريقة إنشاء سيرفر محادثات٬ مع إمكانية دخول عليه
- من تطبيق خاص للأندوريد والآيفون من المتصفح من برنامج على جهازك اللابتوب  وأيضًا سأتطرق إلى كيفة الدخول على سيرفر المحادثات من خارج شبكة البيت٬ بحيث أنه يمكنك اعتماد السيرفر كبرنامج محادثات سري لك ولمن تحب.
-الخيارات المتاحة برامج المحادثات المفتوحة المصدر التي كانت تستحق الاطلاع٬ اثنان:
+        #مقدمة
+في هذه المشاركة سوف أشرح طريقة إنشاء سيرفر محادثات٬ مع إمكانية دخول عليه
+ من تطبيق خاص للأندوريد والآيفون من المتصفح من برنامج على جهازك اللابتوب  وأيضًا سأتطرق إلى كيف يمكن الدخول على سيرفر المحادثات من خارج شبكة البيت٬ بحيث أنه يمكنك اعتماد السيرفر كبرنامج محادثات سري لك ولمن تحب.
+الخيارات المتاحة برامج المحادثات المفتوحة المصدر التي كانت تستحق الاطلاع عليها اثنان
  chat rocket روكيت شات mattermost ماتر موست  وبعد المقارنة٬ وجدت روكيت شات أفضل من ماتر موست لعدة أسباب:
         
         <div class="read-more-link">
-            <a href="/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5/">Read More…</a>
+            <a href="/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5-%D8%A8%D8%A7%D9%84%D8%A8%D9%8A%D8%AA/">Read More…</a>
         </div>
         
         </div>

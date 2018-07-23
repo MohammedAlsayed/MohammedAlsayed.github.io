@@ -10,8 +10,8 @@
     	
     <meta name="generator" content="Hugo 0.37.1" />
     
-    <title>Categories &middot; Home</title>
-    <meta content="Categories - Home" property="og:title">
+    <title>Usefull Linux Cmds &middot; Home</title>
+    <meta content="Usefull Linux Cmds - Home" property="og:title">
     <meta content=" - " property="og:description">    
     <!-- CSS --> 
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -32,9 +32,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png">
-    <!-- RSS --> 
-    <link href="https://www.mmsayed.com/categories/index.xml" rel="alternate" type="application/rss+xml" title="Home" />
-    <link href="https://www.mmsayed.com/categories/index.xml" rel="feed" type="application/rss+xml" title="Home" />
+    
 
 	</head>
     <body>
@@ -94,27 +92,119 @@
 </div>
 
         <div class="content container">
-            <h1 class="title">Categories</h1>
-<ul class="posts">
-    <li>
-        <span>
-            <a href="https://www.mmsayed.com/categories/development/">Development</a>
             
-            <time class="pull-right post-list">Apr 04, 2018</time>    
-            
-        </span>
-    </li><li>
-        <span>
-            <a href="https://www.mmsayed.com/categories/golang/">Golang</a>
-            
-            <time class="pull-right post-list">Apr 04, 2018</time>    
-            
-        </span>
-    </li>
-</ul>
+<div class="post">
+    <h1>Usefull Linux Cmds</h1>
+    
+    <div class="col-sm-12 col-md-12">
+      <span class="text-left post-date meta">
+              
+         
+          <i class="fas fa-calendar-alt"></i> Jul 23, 2018
+        
+        
+        
+        
+        </span>  
+    </div>    
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The following commands I found useful while working. This blog will be updated continuosly.</p>
+
+<h3 id="sshfs">sshfs</h3>
+
+<p>This commands syncs a folder in a server with your local directory</p>
+
+<pre><code>sshfs username@server-ip:/folder/path/in/the/server /local/path
+e.g:
+sshfs root@libvirt:/root/go/src/wirefilter.com/ .
+</code></pre>
+
+<p>If you finished, you can unmount the folder.</p>
+
+<pre><code>umount -f wirefilter.com
+</code></pre>
+
+<h3 id="ssh-copy-id">ssh-copy-id</h3>
+
+<p>Instead of doing the long ssh copy procedure this command does it for you.</p>
+
+<pre><code>ssh-copy-id username@server-ip
+ssh-copy-id msayed@192.168.100.20
+</code></pre>
+
+<h3 id="ssh-hostname">ssh hostname</h3>
+
+<p>Instead of remembring the username and ip address of every server, you can assign it an alias and ssh it with that alias.</p>
+
+<p>open ssh config file:</p>
+
+<pre><code>vi ~/.ssh/config
+</code></pre>
+
+<p>add the following config:</p>
+
+<pre><code>host myserver
+hostname 10.10.10.151
+user msayed
+</code></pre>
+
+<p>then instead of doing :</p>
+
+<pre><code>ssh msayed@10.10.10.151
+</code></pre>
+
+<p>do</p>
+
+<pre><code>ssh myserver
+</code></pre>
+
+<h2 id="forward-agent">Forward agent</h2>
+
+<p>This is also useful but I don&rsquo;t know how :). I will read about it more.</p>
+
+<p>open ssh config file:</p>
+
+<pre><code>vi ~/.ssh/config
+</code></pre>
+
+<p>add the following:</p>
+
+<pre><code>host *
+    ForwardAgent yes
+</code></pre>
+
+<h2 id="creating-patch-file">Creating Patch file</h2>
+
+<p>create file1 with size = 1024*10 bytes:</p>
+
+<pre><code>dd bs=1024 count=10 if=/dev/zero of=emtpy/file1
+head -c 1000 &lt; /dev/urandom &gt; text1
+</code></pre>
+
+<p>creating patch for file1 and applying it:</p>
+
+<pre><code>diff file1 file2 &gt; diff
+patch file1 diff
+</code></pre>
+
+<p>file1 is now = file2</p>
+
+  </div>
+
 
             <div class="footer">
-                
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+
+
             </div>
         </div>
         
