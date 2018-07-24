@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Jul 2018 15:30:19 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 17:03:47 +0300</lastBuildDate>
     
 	<atom:link href="https://www.mmsayed.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cloudinit and Virtualbox</title>
+      <link>https://www.mmsayed.com/posts/2018/7/cloudinit-and-virtualbox/</link>
+      <pubDate>Tue, 24 Jul 2018 17:03:47 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2018/7/cloudinit-and-virtualbox/</guid>
+      <description>Introduction You should have an image that contains cloudinit:
+ There are ready made images that can be found here, chose images that have GenericCloud
+ Or you can create you own image by following this tutorial
+  Steps 1- first create your meta data, user data files
+user data file:
+#cloud-config password: mypassword chpasswd: { expire: False } ssh_pwauth: True ssh_authorized_keys: - &amp;lt;paste your ssh pub key&amp;gt;  meta data file:</description>
+    </item>
     
     <item>
       <title>Kafka Useful Cmds</title>
