@@ -10,5 +10,23 @@
 	<atom:link href="https://www.mmsayed.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Development</title>
+      <link>https://www.mmsayed.com/categories/development/</link>
+      <pubDate>Wed, 04 Apr 2018 23:02:44 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://www.mmsayed.com/categories/golang/</link>
+      <pubDate>Wed, 04 Apr 2018 23:02:44 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/categories/golang/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
