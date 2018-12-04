@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Jul 2018 13:36:06 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 00:21:54 +0300</lastBuildDate>
     
 	<atom:link href="https://www.mmsayed.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Proxmox Behind Synology&#39;s Nginx</title>
+      <link>https://www.mmsayed.com/posts/2018/12/proxmox-behind-synology-nginx/</link>
+      <pubDate>Tue, 04 Dec 2018 00:21:54 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2018/12/proxmox-behind-synology-nginx/</guid>
+      <description>Introduction I recently installed synology ds418 server in my house for cloud storage purposes, and I currently made it to work as a reverse proxy server with nginx.
+Setup The below figure is the topology of my home network
+So the problem was that noVNC of proxmox did not work after making it behind nginx. So the below nginx configuration open&amp;rsquo;s a websocket with proxmox to support noVNC.
+vi /etc/nginx/sites-enabled/domian.</description>
+    </item>
+    
+    <item>
+      <title>Installing Proxmox</title>
+      <link>https://www.mmsayed.com/posts/2018/11/installing-proxmox/</link>
+      <pubDate>Sat, 24 Nov 2018 21:52:02 +0300</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2018/11/installing-proxmox/</guid>
+      <description>Introduction I know that installing proxmox is straight forward. First, burning the image on a usb and then booting from a server or laptop , then follwoing the installation steps. Unfortunately, I tried to do that on my HP pavillion laptop and I was getting a black page with &amp;ldquo;GRUB&amp;rdquo; word appering in the upper left corner. I tried burning the usb with different softwares and also with different operating systems but the same black page was appearing.</description>
+    </item>
     
     <item>
       <title>Get Server Specs From Command</title>
@@ -61,18 +82,6 @@ sshfs This commands syncs a folder in a server with your local directory
 sshfs username@server-ip:/folder/path/in/the/server /local/path e.g: sshfs root@libvirt:/root/go/src/wirefilter.com/ .  If you finished, you can unmount the folder.
 umount -f wirefilter.com  ssh-copy-id Instead of doing the long ssh copy procedure this command does it for you.
 ssh-copy-id username@server-ip ssh-copy-id msayed@192.168.100.20  ssh hostname Instead of remembring the username and ip address of every server, you can assign it an alias and ssh it with that alias.</description>
-    </item>
-    
-    <item>
-      <title>إنشاء سيرفر محادثات خاص</title>
-      <link>https://www.mmsayed.com/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5/</link>
-      <pubDate>Thu, 05 Apr 2018 23:50:20 +0300</pubDate>
-      
-      <guid>https://www.mmsayed.com/posts/2018/4/%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B3%D9%8A%D8%B1%D9%81%D8%B1-%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A7%D8%AA-%D8%AE%D8%A7%D8%B5/</guid>
-      <description>مقدمة في هذه المشاركة سوف أشرح طريقة إنشاء سيرفر محادثات٬ مع إمكانية دخول عليه
- من تطبيق خاص للأندوريد والآيفون من المتصفح من برنامج على جهازك اللابتوب  وأيضًا سأتطرق إلى كيفة الدخول على سيرفر المحادثات من خارج شبكة البيت٬ بحيث أنه يمكنك اعتماد السيرفر كبرنامج محادثات سري لك ولمن تحب.
-الخيارات المتاحة برامج المحادثات المفتوحة المصدر التي كانت تستحق الاطلاع٬ اثنان:
- chat rocket روكيت شات mattermost ماتر موست  وبعد المقارنة٬ وجدت روكيت شات أفضل من ماتر موست لعدة أسباب:</description>
     </item>
     
     <item>

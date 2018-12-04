@@ -10,8 +10,8 @@
     	
     <meta name="generator" content="Hugo 0.37.1" />
     
-    <title>My First Post &middot; Home</title>
-    <meta content="My First Post - Home" property="og:title">
+    <title>Installing Proxmox &middot; Home</title>
+    <meta content="Installing Proxmox - Home" property="og:title">
     <meta content=" - " property="og:description">    
     <!-- CSS --> 
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i|Roboto+Mono:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -94,13 +94,13 @@
         <div class="content container">
             
 <div class="post">
-    <h1>My First Post</h1>
+    <h1>Installing Proxmox</h1>
     
     <div class="col-sm-12 col-md-12">
       <span class="text-left post-date meta">
               
          
-          <i class="fas fa-calendar-alt"></i> Mar 31, 2018
+          <i class="fas fa-calendar-alt"></i> Nov 24, 2018
         
         
         
@@ -110,12 +110,106 @@
     
     
 
-<h1 id="hello-world">Hello World</h1>
+<h2 id="introduction">Introduction</h2>
 
-<p>This is my first blog site that I made in my ever life. The technologies used are <a href="https://themes.gohugo.io">hugo</a> for static site generating and <a href="https://github.com">github</a> for hosting. <a href="https://rayed.com">Mr. Rayed</a> my manager in the company inspired me with this great idea. Many thanks to <a href="https://rayed.com">Mr. Rayed</a>.
-Maybe my next blog will be on how I made this blog but in arabic. I also have some other topics that I would like to include in the few next days.</p>
+<p>I know that installing proxmox is straight forward. First, burning the image on a usb and then booting from a server or laptop , then follwoing the installation steps. Unfortunately, I tried to do that on my HP pavillion laptop and I was getting a black page with &ldquo;GRUB&rdquo; word appering in the upper left corner. I tried burning the usb with different softwares and also with different operating systems but the same black page was appearing. So, in this blog I will show you how I solved this issue, and successfully installed proxmox.</p>
 
-<p>Cheers!</p>
+<h2 id="requirments">Requirments</h2>
+
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a></li>
+<li><a href="https://www.amazon.com/StarTech-com-SATA-Drive-Adapter-Cable/dp/B00HJZJI84">USB to SATA cable</a></li>
+<li>Hard Drive</li>
+<li>Laptop</li>
+</ul>
+
+<h2 id="solving-the-issue">Solving the issue</h2>
+
+<p>1- What I did? I first installed a vm proxmox on Virtual Box with the following specfications:</p>
+
+<ul>
+<li>vdi hard drive</li>
+<li>1 core CPU</li>
+<li>1024 memory</li>
+</ul>
+
+<p>2- After fininshing the installation I cloned the image into a raw format with the VBoxManage CLI.</p>
+
+<pre><code>VBoxManage clonehd proxmox.vdi proxmox.img --format RAW
+</code></pre>
+
+<p>3- Next I burned the <code>proxmox.img</code> on my hard drive with <code>dd</code>. Here is how:</p>
+
+<ul>
+<li>Finded the hard drive name thru <code>diskutil list</code>. Which is /dev/disk2</li>
+<li>Formated the disk <code>diskutil eraseDisk FREE pve /dev/disk2</code></li>
+<li>Then purned proxmox to the hard drive <code>sudo dd if=proxmox.img of=/dev/disk2</code></li>
+</ul>
+
+<p>4- Connected the hard drive to my laptop and finally it worked!. But now I faced an issue with the volume sizes which where too small according to my sda 750GB hard drive. Specially the two logical volumes: <code>pve-root</code> = 1.8GB which contains the iso files and <code>pve-data</code>=2.3GB which will have the VMs data .</p>
+
+<pre><code>root@home-vm:~# lsblk
+NAME               MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda                  8:0    0 698.7G  0 disk 
+├─sda1               8:1    0     1M  0 part 
+├─sda2               8:2    0   256M  0 part 
+└─sda3               8:3    0   7.8G  0 part 
+├─pve-swap         253:0    0   896M  0 lvm  [SWAP]
+├─pve-root         253:1    0   1.8G  0 lvm  /
+├─pve-data_tmeta   253:2    0     1G  0 lvm  
+│ └─pve-data       253:4    0   2.3G  0 lvm  
+└─pve-data_tdata   253:3    0   2.3G  0 lvm  
+    └─pve-data     253:4    0   2.3G  0 lvm  
+</code></pre>
+
+<p>To increase there size, enter the console of the proxmox and do the following:</p>
+
+<pre><code>apt-get install parted
+parted /dev/sda 
+
+(parted) print
+Warning: Not all of the space available to /dev/vda appears to be used, you can
+fix the GPT to use all of the space (an extra 1448371952 blocks) or continue
+with the current setting? 
+Fix/Ignore? F 
+
+resizepart 3 100%
+quit
+</code></pre>
+
+<p>Now <code>sda3</code> free size is larger</p>
+
+<pre><code>fdisk -l /dev/sda | grep ^/dev
+
+/dev/sda1    2048       4095       2048     1M BIOS boot
+/dev/sda2    4096     528383     524288   256M EFI System
+/dev/sda3  528384 1465149134 1464620751 698.4G Linux LVM
+</code></pre>
+
+<p>before:</p>
+
+<pre><code>fdisk -l /dev/sda | grep ^/dev
+
+/dev/sda1    2048     4095     2048    1M BIOS boot
+/dev/sda2    4096   528383   524288  256M EFI System
+/dev/sda3  528384 16777182 16248799  7.8G Linux LVM
+</code></pre>
+
+<p>Then after increasing the hard drive, increase the logical volumes:</p>
+
+<pre><code>lvresize --size +40G --resizefs /dev/pve/root
+lvresize --size +5G --resizefs /dev/pve/swap
+lvresize --size +200G --resizefs /dev/pve/data
+
+root@home-vm:~# lsblk
+
+├─pve-swap                     253:0    0   5.9G  0 lvm  [SWAP]
+├─pve-root                     253:1    0  41.8G  0 lvm  /
+....
+    ├─pve-data                 253:5    0 202.3G  0 lvm  
+</code></pre>
+
+<p>Finally <code>pve-swap</code>, <code>pve-root</code>, <code>pve-data</code> LVS increased. Hope this will help others!.</p>
 
   </div>
 
