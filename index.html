@@ -96,6 +96,15 @@
             <div class="posts">
   
         <div class="post">
+        <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2019/10/restart_mac_blutooth_service/">Restart mac blutooth service</a></h1>
+        <span class="post-date">Oct 19, 2019</span>
+        Sometimes my mac&rsquo;s blutooth gets stuck, and I cannot attach any blutooth device nor turn it off and on. So, instead of restarting the laptop the following two commands fixes the problem.
+To turn it off
+sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport  To turn it on
+sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport  
+        
+        </div>
+        <div class="post">
         <h1 class="post-title"><a href="https://www.mmsayed.com/posts/2018/12/proxmox-behind-synology-nginx/">Proxmox Behind Synology&#39;s Nginx</a></h1>
         <span class="post-date">Dec 4, 2018</span>
         Introduction I recently installed synology ds418 server in my house for cloud storage purposes, and I currently made it to work as a reverse proxy server with nginx.

@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Dec 2018 00:21:54 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 14:33:49 -0700</lastBuildDate>
     
 	<atom:link href="https://www.mmsayed.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Restart mac blutooth service</title>
+      <link>https://www.mmsayed.com/posts/2019/10/restart_mac_blutooth_service/</link>
+      <pubDate>Sat, 19 Oct 2019 14:33:49 -0700</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2019/10/restart_mac_blutooth_service/</guid>
+      <description>Sometimes my mac&amp;rsquo;s blutooth gets stuck, and I cannot attach any blutooth device nor turn it off and on. So, instead of restarting the laptop the following two commands fixes the problem.
+To turn it off
+sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport  To turn it on
+sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport  </description>
+    </item>
     
     <item>
       <title>Proxmox Behind Synology&#39;s Nginx</title>
