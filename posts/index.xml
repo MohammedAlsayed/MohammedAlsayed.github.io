@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Oct 2019 14:33:49 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2020 05:04:20 -0700</lastBuildDate>
     
 	<atom:link href="https://www.mmsayed.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>مشروع ترجمة أوراق علمية في مجال الذكاء الاصطناعي</title>
+      <link>https://www.mmsayed.com/posts/2020/09/translating_machine_learning_papers/</link>
+      <pubDate>Sun, 06 Sep 2020 05:04:20 -0700</pubDate>
+      
+      <guid>https://www.mmsayed.com/posts/2020/09/translating_machine_learning_papers/</guid>
+      <description>مشروع تعلم مجال الذكاء الاصطناعي هذه المدونة من أجل تسجيل البدء في ترجمة الأوراق العلمية في مجال الذكاء الاصطناعي التي تلفت انتباهي وذلك في سبيل التعلم والتعليم.
+أول ورقة سأقوم بترجمتها وتلخيصها هذه الورقة العلمية بإذن الله.
+Rapid Object Detection using a Boosted Cascade of Simple Features
+وهي أساس عمل ال Convolutional Kernals في ال CNN.
+وفقني الله وإياكم.</description>
+    </item>
     
     <item>
       <title>Restart mac blutooth service</title>

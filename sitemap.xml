@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.mmsayed.com/posts/2020/09/translating_machine_learning_papers/</loc>
+    <lastmod>2020-09-06T05:04:20-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.mmsayed.com/posts/2019/10/restart_mac_blutooth_service/</loc>
     <lastmod>2019-10-19T14:33:49-07:00</lastmod>
   </url>
@@ -86,13 +91,13 @@
   
   <url>
     <loc>https://www.mmsayed.com/</loc>
-    <lastmod>2019-10-19T14:33:49-07:00</lastmod>
+    <lastmod>2020-09-06T05:04:20-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.mmsayed.com/posts/</loc>
-    <lastmod>2019-10-19T14:33:49-07:00</lastmod>
+    <lastmod>2020-09-06T05:04:20-07:00</lastmod>
     <priority>0</priority>
   </url>
   
